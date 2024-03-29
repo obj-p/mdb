@@ -28,4 +28,9 @@ final class MDBTests: XCTestCase {
 
         // Then -
     }
+
+    func testSubcommandStartServer() throws {
+        // Given -
+        MDB.main(["--port", "1337", "start-server"])
+    }
 }

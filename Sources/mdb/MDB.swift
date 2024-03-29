@@ -3,6 +3,8 @@ import Foundation
 
 @main
 struct MDB: ParsableCommand {
+    static let configuration = CommandConfiguration(subcommands: [StartServer.self])
+
     @Option(name: .shortAndLong, help: "The MDB server port.")
     var port: UInt?
 

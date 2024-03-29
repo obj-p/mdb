@@ -1,4 +1,15 @@
+## Homebrew
+
+Brewfile.lock.json
+
 ## MacOS
 
 .DS_Store
+
+## SWift Package Manager
+.build/
+
+## Xcode
+
+xcuserdata/
 

@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
     <key>FILEHEADER</key>
-    <string>Header comments will should be removed before commit. SwiftFormat will enforce it.</string>
+    <string>Header comments should be removed before commit. SwiftFormat will enforce it.</string>
 </dict>
 </plist>

@@ -4,7 +4,7 @@ import XCTest
 
 final class MDBTests: XCTestCase {
     func testHelp() throws {
-        // Given - the ParsableArguments helpMessage()
+        // When - invoking the ParsableArguments helpMessage()
         let helpMessage = MDB.helpMessage()
         let expectedHelpMessage = """
         USAGE: mdb [--port <port>]

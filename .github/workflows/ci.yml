@@ -15,10 +15,10 @@ concurrency:
 
 jobs:
   test:
-    runs-on: macos-14
+    runs-on: macos-13
     strategy:
       matrix:
-        xcode: ["15.2"]
+        xcode: ["15.0.1"]
     steps:
       - uses: actions/checkout@v4
       - run: swift test

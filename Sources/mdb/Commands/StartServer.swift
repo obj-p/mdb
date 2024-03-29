@@ -3,7 +3,8 @@ import ArgumentParser
 struct StartServer: ParsableCommand {
     static let configuration = CommandConfiguration(commandName: "start-server")
 
-    func run() throws {
-        print("foo")
-    }
+    @OptionGroup(visibility: .hidden)
+    var globalOptions: GlobalOptions
+
+    func run() throws {}
 }

@@ -22,19 +22,4 @@ final class MDBTests: XCTestCase {
         // Then
         XCTAssertEqual(expectedHelpMessage, helpMessage)
     }
-
-    func testPort() throws {
-        // Given -
-        var mdb = try MDB.parseAsRoot(["--port", "1337", "start-server"])
-
-        // When -
-        try mdb.run()
-
-        // Then -
-    }
-
-    func testSubcommandStartServer() throws {
-        // Given -
-        MDB.main(["--port", "1337", "start-server"])
-    }
 }

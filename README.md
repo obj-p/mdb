@@ -1,3 +1,3 @@
 # mdb
 
-[![build](https://github.com/obj-p/mdb/actions/workflows/ci.yml/badge.svg)](https://github.com/obj-p/mdb/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/obj-p/mdb/actions/workflows/ci.yml/badge.svg)](https://github.com/obj-p/mdb/actions/workflows/ci.yml/badge.svg)

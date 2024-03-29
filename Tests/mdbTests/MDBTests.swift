@@ -7,12 +7,16 @@ final class MDBTests: XCTestCase {
         // When - invoking the ParsableArguments helpMessage()
         let helpMessage = MDB.helpMessage()
         let expectedHelpMessage = """
-        USAGE: mdb [--port <port>]
+        USAGE: mdb [--port <port>] <subcommand>
 
         OPTIONS:
           -p, --port <port>       The MDB server port.
           -h, --help              Show help information.
 
+        SUBCOMMANDS:
+          start-server
+
+          See 'mdb help <subcommand>' for detailed help.
         """
 
         // Then
@@ -21,7 +25,7 @@ final class MDBTests: XCTestCase {
 
     func testPort() throws {
         // Given -
-        var mdb = try MDB.parseAsRoot(["--port", "1337"])
+        var mdb = try MDB.parseAsRoot(["--port", "1337", "start-server"])
 
         // When -
         try mdb.run()

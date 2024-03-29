@@ -7,7 +7,9 @@ Brewfile.lock.json
 .DS_Store
 
 ## SWift Package Manager
+
 .build/
+.swiftpm/
 
 ## Xcode
 

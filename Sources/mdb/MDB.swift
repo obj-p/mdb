@@ -5,13 +5,6 @@ import Foundation
 struct MDB: ParsableCommand {
     static let configuration = CommandConfiguration(subcommands: [StartServer.self])
 
-    @Option(name: .shortAndLong, help: "The MDB server port.")
-    var port: UInt?
-
-    mutating func run() throws {
-        port = port ?? ProcessInfo.processInfo.mdbServerPort
-
-        // setup dependencies and invoke subcommand
-        print("Hello, world! On port \(String(describing: port)).")
-    }
+    @OptionGroup()
+    var globalOptions: GlobalOptions
 }

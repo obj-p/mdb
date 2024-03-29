@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
       - run: |
           swift test --enable-code-coverage
-          xcrun llvm-cov export -format="lcov" .build/debug/mdbPackageTests.xctest/ -instr-profile .build/debug/codecov/default.profdata > info.lcov
+          xcrun llvm-cov export -format="lcov" .build/debug/mdbPackageTests.xctest -instr-profile .build/debug/codecov/default.profdata > info.lcov
         env:
           DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
       - name: Upload coverage reports to Codecov

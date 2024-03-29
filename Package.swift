@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "mdb",
-    platforms: [.macOS(.v13)],
+    platforms: [.macOS(.v14)],
     products: [
         .executable(name: "mdb", targets: ["mdb"]),
     ],

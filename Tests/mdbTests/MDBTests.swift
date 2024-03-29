@@ -7,13 +7,13 @@ final class MDBTests: XCTestCase {
         // Given - the ParsableArguments helpMessage()
         let helpMessage = MDB.helpMessage()
         let expectedHelpMessage = """
-            USAGE: mdb [--port <port>]
+        USAGE: mdb [--port <port>]
 
-            OPTIONS:
-              -p, --port <port>       The MDB server port.
-              -h, --help              Show help information.
+        OPTIONS:
+          -p, --port <port>       The MDB server port.
+          -h, --help              Show help information.
 
-            """
+        """
 
         // Then
         XCTAssertEqual(expectedHelpMessage, helpMessage)
@@ -27,6 +27,5 @@ final class MDBTests: XCTestCase {
         try mdb.run()
 
         // Then -
-
     }
 }

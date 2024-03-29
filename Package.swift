@@ -1,14 +1,23 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
     name: "mdb",
+    platforms: [.macOS(.v13)],
     products: [
-        .library(name: "mdb", targets: ["mdb"]),
+        .executable(name: "mdb", targets: ["mdb"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "1.3.0"),
     ],
     targets: [
-        .target(name: "mdb"),
+        .executableTarget(
+            name: "mdb",
+            dependencies: [
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ]
+        ),
         .testTarget(name: "mdbTests", dependencies: ["mdb"]),
     ]
 )

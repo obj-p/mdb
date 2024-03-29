@@ -1,0 +1,11 @@
+included:
+  - Sources
+  - Tests
+
+opt_in_rules:
+  - indentation_width
+
+## Rule configuration
+
+indentation_width:
+  include_multiline_strings: false

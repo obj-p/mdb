@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - "*"
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    # https://github.com/actions/runner-images/blob/main/images/macos/macos-13-Readme.md
+    runs-on: macos-13
+    strategy:
+      matrix:
+        xcode: ["15.2"]
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          swift test --enable-code-coverage
+          xcrun llvm-cov export -format="lcov" \
+            -instr-profile .build/debug/codecov/default.profdata \
+            .build/debug/mdbPackageTests.xctest/Contents/MacOS/mdbPackageTests > info.lcov
+        env:
+          DEVELOPER_DIR: /Applications/Xcode_${{ matrix.xcode }}.app/Contents/Developer
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: obj-p/mdb

@@ -3,7 +3,7 @@ info:
   title: CompanionService
   version: 1.0.0
 servers:
-  - url: /
+  - url: /api
 paths:
   /devices:
     get:

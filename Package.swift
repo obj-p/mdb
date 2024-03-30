@@ -36,6 +36,7 @@ let package = Package(
             ],
             path: "Sources/CompanionAPI",
             exclude: ["Server"],
+            resources: [.copy("openapi.yaml"), .copy("Client/openapi-generator-config.yaml")],
             plugins: [
                 .plugin(name: "OpenAPIGenerator", package: "swift-openapi-generator"),
             ]
@@ -47,6 +48,7 @@ let package = Package(
             ],
             path: "Sources/CompanionAPI",
             exclude: ["Client"],
+            resources: [.copy("openapi.yaml"), .copy("Server/openapi-generator-config.yaml")],
             plugins: [
                 .plugin(name: "OpenAPIGenerator", package: "swift-openapi-generator"),
             ]
